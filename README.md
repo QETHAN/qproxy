@@ -21,8 +21,32 @@
 3. js (use jquery)
 
 ```
+var QProxy = (function() {
+	var devMode = false,
+		apiUrl = 'http://localhost:4000/?jsonUrl=';
+
+	function devModeSetter(mode) {
+		devMode = mode;
+	}
+
+	function proxy() {
+		if(devMode) {
+			return apiUrl;
+		} else {
+			return '';
+		}
+	}
+
+	return {
+		devMode: devModeSetter,
+		proxy: proxy
+	}
+}());
+
+QProxy.devMode(true);
+
 $.ajax({
-	url: 'http://localhost:4000/?jsonUrl=http://api.hupu.com/gamespace/stats/match_id/24576',
+	url: QProxy.proxy() + 'http://api.hupu.com/gamespace/stats/match_id/24576',
 	method: 'GET',
 	dataType: 'json'
 }).done(function(data) {
