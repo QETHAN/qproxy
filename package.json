@@ -1,0 +1,16 @@
+{
+  "name": "qproxy",
+  "version": "1.0.0",
+  "description": "A simple command-line tool for making static server and resolving CORS",
+  "author": "QETHAN",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "node-static": "^0.7.6",
+    "superagent": "^0.21.0"
+  },
+  "bin": {
+    "qproxy": "qproxy.js"
+  }
+}
