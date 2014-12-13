@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 var static = require('node-static'),
-	url = require('url'),
-	qs = require('querystring'),
-	fs = require('fs'),
-	path = require('path'),
-	agent = require('superagent');
+    url = require('url'),
+    qs = require('querystring'),
+    fs = require('fs'),
+    path = require('path'),
+    agent = require('superagent');
 
 var SS = new static.Server(process.cwd());
 
@@ -24,10 +24,10 @@ function statsFileOrDirectory(filepath, request, response) {
 }
 
 function errorCallback(err, request, response) {
-	console.error("Error serving " + request.url + " - " + err.message);
-	response.writeHead(404, {
-	  'Content-Type': 'text/plain' 
-	});
+    console.error("Error serving " + request.url + " - " + err.message);
+    response.writeHead(404, {
+       'Content-Type': 'text/plain' 
+    });
     response.write("OH no, 404");
     response.end();
 }
@@ -72,7 +72,7 @@ function dirCB(dir, request, response) {
 
 require('http').createServer(function (request, response) {
 
-	var qs = url.parse(request.url, true);
+    var qs = url.parse(request.url, true);
 	
     request.addListener('end', function () {
     	if (qs.query.jsonUrl) {
