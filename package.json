@@ -1,6 +1,7 @@
 {
   "name": "qproxy",
-  "version": "1.0.3",
+  "preferGlobal": "true",
+  "version": "1.0.4",
   "description": "A simple command-line tool for making static server and resolving CORS",
   "author": "QETHAN",
   "keywords": [
@@ -9,7 +10,7 @@
   "homepage": "https://github.com/QETHAN/qproxy",
   "repository": {
     "type": "git",
-    "url": "git@github.com:QETHAN/qproxy.git"
+    "url": "git://github.com/QETHAN/qproxy.git"
   },
   "engines": {
     "node": ">=0.10"
@@ -22,3 +23,4 @@
     "qproxy": "qproxy.js"
   }
 }
+
